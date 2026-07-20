@@ -1,0 +1,175 @@
+.nav_container {
+  max-width: 1655px;
+  margin: 0 auto;
+  background: #111111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 35px 20px 10px;
+  /* position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    z-index: 1000; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.main_logo_img {
+  width: 140px;
+
+  cursor: pointer;
+}
+
+/* Middle Navbar options container */
+.navbar_options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 31px;
+}
+
+.nav_link {
+  color: #b0976d;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14.959px;
+}
+
+.nav_link:hover {
+  color: #daa628;
+}
+
+/* Last Navbar Contact Container */
+.navbar_contact {
+  width: 14%;
+  display: flex;
+  justify-content: end;
+}
+
+.navCta {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.navCta:hover {
+  background: var(--gold-light);
+}
+
+.nav_contact_link {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  font-size: 13.959px;
+  padding: 10.297px 15.945px;
+  align-items: center;
+  border-radius: 13.297px;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    #daa628;
+}
+
+.nav_contact_link:hover {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    #b88018;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile_menu {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .nav_container {
+    padding: 10px;
+  }
+
+  .navbar_contact {
+    width: 20%;
+  }
+
+  .logo_cont {
+    width: 20%;
+  }
+
+  .navbar_options {
+    width: 70%;
+  }
+
+  .nav_contact_link {
+    width: 87px;
+  }
+}
+
+@media (max-width: 750px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #daa628 !important;
+  }
+
+  .nav_container {
+    justify-content: start;
+  }
+
+  .navbar_options,
+  .navbar_contact {
+    display: none;
+    /* Hide main nav links on small screens */
+  }
+
+  .mobile_menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111111;
+    width: 98%;
+    text-align: start;
+    padding: 10px;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out;
+  }
+
+  .mobile_menu.show_menu {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    backdrop-filter: blur(3px);
+  }
+
+  .nav_link {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+}

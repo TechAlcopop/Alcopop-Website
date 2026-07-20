@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.header_container {
+    position: relative;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url("../assets/img/header_background.jpg") lightgray 50% / cover no-repeat;
+    height: 90vh;
+    display: flex;
+    overflow: visible;
+    padding-top: 100px;
+}
+
+.header_container>div:nth-child(1)>p:nth-child(2) {
+    color: #B0976D;
+    font-size: 25px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    margin: 0;
+    word-spacing: 5px;
+}
+.product_details>span{
+   color: #1E1E1E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+}
+
+.header_container>div:nth-child(1) {
+    display: flex;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 150px;
+    width: 50%;
+}
+
+.header_container>div:nth-child(1)>p:nth-child(1) {
+    color: #B0976D;
+    font-family: "Playfair Display";
+    font-size: 71px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+}
+
+.header_container>div:nth-child(1)>a {
+    color: #B0976D;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration: none;
+    padding-top: 35px;
+    padding-left: 50px;
+    transition: all 0.3s ease;
+}
+
+.header_container>div:nth-child(1)>a:hover {
+    color: #d4b77f;
+    transform: translateY(-2px);
+}
+
+.header_container>div:nth-child(2) {
+    position: absolute;
+    bottom: -40%;
+    right: 0%;
+    width: 35%;
+    width: 450px;
+    z-index: 10;
+}
+
+.header_container>div:nth-child(2)>img {
+    width: 100%;
+    height: auto;
+}
+
+/* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+    width: 300px;
+} */
+
+.typing1 {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: typing1 1s steps(25, end) forwards;
+}
+
+.typing2 {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing2 1.2s steps(30, end) forwards;
+    animation-delay: 1s;
+    /* starts after first line */
+}
+
+
+
+@keyframes typing1 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes typing2 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.fade_in_img {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 2.2s;
+    /* after text almost done */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#zars_header {
+    bottom: -12% !important;
+    right: 5% !important;
+}
+
+
+/* Who We Are */
+.Who_details_cont {
+    background: white;
+}
+
+.Who_details_cont>div>h3 {
+    color: #B0976D;
+    font-family: Lato;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 126.324%;
+    letter-spacing: 0.75px;
+}
+
+.who_main_cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.who_main_cont>div {
+    width: 50%;
+}
+
+.who_main_cont>div:nth-child(1)>img {
+    width: 100%;
+}
+
+.Who_details_cont {
+    width: 47% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Who_details_cont>div>h1 {
+    color: #1E1E1E;
+    font-family: "Playfair Display";
+    font-size: 71px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 106.5px */
+}
+
+.Who_details_cont>div>p {
+    color: #050505;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 126.324%;
+    letter-spacing: 0.57px;
+}
+
+.Who_details_cont>div>img {
+    margin-top: 45px;
+}
+
+.Who_details_cont>div>* {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+.animate>div>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* stagger effect */
+.animate>div>*:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.animate>div>*:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.animate>div>*:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.animate>div>*:nth-child(4) {
+    transition-delay: 0.8s;
+}
+
+.animate>div>*:nth-child(5) {
+    transition-delay: 1s;
+}
+
+.animate>div>*:nth-child(6) {
+    transition-delay: 1.2s;
+}
+
+
+
+/* product */
+.product_container {
+    background: #F1F1F1;
+}
+
+.product_container>div:nth-child(1) {
+    width: 50%;
+}
+
+.product_container>div:nth-child(1)>img {
+    width: 70%;
+}
+
+.product_container {
+    display: flex;
+}
+
+.product_details {
+    width: 47%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product_details>h2 {
+    color: #1E1E1E;
+    font-family: "Playfair Display";
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 85.5px */
+    margin: 0;
+}
+
+.product_details>p {
+    color: var(--Primary-color, #B0976D);
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 126.324%;
+    letter-spacing: 0.75px;
+}
+
+.product_details>h2:nth-child(3) {
+    font-size: 55px;
+    margin-bottom: 50px;
+}
+
+.product_details>div>p {
+    color: #050505;
+    font-family: Lato;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 126.324%;
+    /* 24.001px */
+    letter-spacing: 0.57px;
+    margin: 0;
+}
+
+.product_details>div>p:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+
+/* Default state: visible */
+.product_container img,
+.product_details>* {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease-out;
+}
+
+/* Hidden until revealed */
+.product_container:not(.product_reveal) img,
+.product_container:not(.product_reveal) .product_details>* {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Reveal animation with stagger */
+.product_reveal img {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.product_reveal .product_details>*:nth-child(1) {
+    transition-delay: 0.4s;
+}
+
+.product_reveal .product_details>*:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.product_reveal .product_details>*:nth-child(3) {
+    transition-delay: 0.8s;
+}
+
+.product_reveal .product_details>*:nth-child(4) {
+    transition-delay: 1s;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imgSkeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.img {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img.loaded {
+    opacity: 1;
+}
+
+.skeleton {
+    width: 100%;
+    height: 400px;
+    /* adjust based on your image size */
+    background: linear-gradient(90deg, #eee, #ddd, #eee);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.lazyImg {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.loaded {
+    opacity: 1;
+}
+
+
+@media (max-width:1200px) {
+    .product_details>h2 {
+        font-size: 35px;
+    }
+
+    .product_details>p {
+        font-size: 16px;
+    }
+
+    .product_details>h2:nth-child(3) {
+        font-size: 45px;
+    }
+
+    .product_details>div>p {
+        font-size: 16px;
+    }
+
+    .product_details {
+        padding: 30px 0px;
+    }
+
+    /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        width: 250px;
+        position: relative;
+        left: 220px;
+    } */
+}
+
+@media (max-width:1150px) {
+    .Who_details_cont>div>h3 {
+        font-size: 20px;
+    }
+
+    .Who_details_cont>div>h1 {
+        font-size: 50px;
+    }
+
+    .Who_details_cont>div>p {
+        font-size: 16px;
+    }
+
+    .header_container {
+        height: 80vh;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 400px;
+    }
+
+    /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        left: 150px;
+    } */
+}
+
+@media (max-width:1050px) {
+    .header_container>div:nth-child(1) {
+        padding-left: 50px;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 350px;
+    }
+}
+
+@media (max-width:1000px) {
+    .product_details>h2 {
+        font-size: 30px;
+    }
+
+    .product_details>p {
+        font-size: 13px;
+    }
+
+    .product_details>h2:nth-child(3) {
+        font-size: 37px;
+        margin-bottom: 30px;
+    }
+
+    .product_details>div>p {
+        font-size: 13px;
+    }
+
+    /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        left: 60px;
+        width: 235px;
+    } */
+}
+
+@media (max-width:960px) {
+    .header_container>div:nth-child(1) {
+        padding-left: 60px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 20px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 60px;
+    }
+
+    .header_container>div:nth-child(1)>a {
+        font-size: 20px;
+    }
+
+    .Who_details_cont>div>h1 {
+        font-size: 40px;
+    }
+
+    .Who_details_cont>div>p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:850px) {
+    .header_container {
+        height: 70vh;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 50px;
+    }
+}
+
+@media (max-width:800px) {
+    .product_details>h2 {
+        font-size: 25px;
+    }
+
+    .product_details>p {
+        font-size: 11px;
+    }
+
+    .product_details>h2:nth-child(3) {
+        font-size: 33px;
+    }
+
+    .product_details>div>p {
+        font-size: 11px;
+    }
+    .product_details>span{
+    font-size: 13px;
+  }
+}
+
+@media (max-width:760px) {
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 16px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 45px;
+    }
+
+    .header_container>div:nth-child(1)>a {
+        padding-top: 30px;
+        padding-left: 40px;
+        font-size: 16px;
+    }
+
+    .header_container>div:nth-child(1) {
+        padding-left: 40px;
+    }
+
+    .header_container {
+        height: auto;
+    }
+
+    .who_main_cont {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .Who_details_cont {
+        width: 70% !important;
+    }
+
+    .who_main_cont>div {
+        width: 65%;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 300px;
+    }
+
+    .header_container {
+        padding-top: 40px;
+    }
+
+}
+
+@media (max-width:650px) {
+    .header_container>div:nth-child(2) {
+        width: 280px;
+    }
+}
+
+@media (min-height:750px) {
+    .header_container>div:nth-child(2) {
+        bottom: -30%;
+    }
+}
+
+@media (min-height:1100px) and (min-width:900px) {
+    .header_container>div:nth-child(2) {
+        bottom: -24%;
+        width: 480px;
+    }
+
+}
+
+
+@media (max-width:600px) {
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 13px;
+    }
+
+    .header_container {
+        height: 60vh;
+    }
+
+    .header_container>div:nth-child(1)>a {
+        font-size: 13px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 35px;
+    }
+
+    .header_container>div:nth-child(1) {
+        height: auto;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 230px;
+    }
+
+    .header_container>div:nth-child(2)>img {
+        top: 38%;
+    }
+
+    .product_container {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .product_details {
+        width: fit-content;
+        padding: 30px;
+        background: #F1F1F1;
+        padding-top: 0;
+        margin-top: 30px;
+    }
+
+    .product_details>h2 {
+        font-size: 20px;
+    }
+
+    .product_details>p {
+        font-size: 12px;
+    }
+
+    .product_details>h2:nth-child(3) {
+        font-size: 25px;
+    }
+
+    .product_details>div>p {
+        font-size: 12px;
+    }
+
+    .product_container>div:nth-child(1) {
+        width: 100%;
+        background: white;
+        margin-top: -245px;
+        display: flex;
+        justify-content: end;
+    }
+    .product_details>div>p:nth-child(1) {
+    width: 78%;
+}
+
+    .product_container>div:nth-child(1)>img {
+        width: 150px;
+        position: relative;
+        top: 165px;
+    }
+
+    /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        left: 25px;
+        width: 160px;
+    } */
+}
+
+@media (max-width:500px) {
+    .header_container>div:nth-child(1) {
+        padding-left: 25px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 11px;
+    }
+
+    .header_container>div:nth-child(1)>a {
+        font-size: 11px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 25px;
+    }
+
+    .Who_details_cont {
+        width: 85% !important;
+    }
+
+    .Who_details_cont>div>h1 {
+        font-size: 30px;
+    }
+    .product_details>span{
+    font-size: 11px;
+  }
+
+    .Who_details_cont>div>p {
+        font-size: 12px;
+    }
+
+    .who_main_cont>div {
+        width: 75%;
+    }
+
+    .header_container {
+        padding-top: 0px;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 210px;
+    }
+
+    /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        left: 40px;
+        width: 140px;
+    } */
+}
+
+@media (max-width:470px) {
+.product_container>div:nth-child(1)>img {
+    top: 120px;
+}
+  .product_details>div>p:nth-child(1) {
+    width: 100%;
+}
+}
+@media (max-width:400px) {
+    .header_container>div:nth-child(1)>p:nth-child(2) {
+        font-size: 9px;
+    }
+
+    .header_container>div:nth-child(1)>a {
+        font-size: 9px;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .header_container>div:nth-child(1)>p:nth-child(1) {
+        font-size: 20px;
+    }
+
+    .product_details>h2:nth-child(3) {
+        font-size: 20px;
+    }
+
+    .product_details {
+        padding: 14px;
+    }
+
+    .product_details>div>p {
+        font-size: 10px;
+    }
+
+    .product_details>p {
+        font-size: 10px;
+    }
+
+    .product_details>h2 {
+        font-size: 17px;
+    }
+
+    .header_container>div:nth-child(2) {
+        width: 190px;
+    }
+
+    .header_container {
+        height: 53vh;
+    }
+     /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
+        width: 130px;
+    } */
+}
+
+@media (max-width:350px) {
+    .header_container>div:nth-child(2) {
+        width: 170px;
+    }
+    .product_details>span{
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+*,
+*::before,
+*::after {
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;
+  -webkit-touch-callout: none; /* disable long-press menu on iOS */
+}
+
+/* hide selection highlight color (optional) */
+::selection {
+  background: transparent;
+}
+
+input,
+textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  caret-color: auto;   /* show normal caret */
+  cursor: text;        /* show text cursor */
+}
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* optional: disables right-click + drag */
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  font-optical-sizing: auto;
+}
+html {
+  scroll-behavior: smooth;
+}

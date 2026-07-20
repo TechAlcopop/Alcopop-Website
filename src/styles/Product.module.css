@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+.whiskyWrapper {
+    width: 100%;
+    color: white;
+    margin-top: 195px;
+    text-align: justify;
+}
+
+/* Hero Section */
+.whiskyHero {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* FIX repeating issue */
+    padding: 50px;
+    min-height: 330px;
+}
+
+.whiskyContent {
+    max-width: 45%;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #f5c95c;
+    /* golden text */
+    z-index: 2;
+}
+
+.exploreBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: goldenrod;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.whiskyBottle img {
+    position: absolute;
+    right: 80px;
+    bottom: -30px;
+    height: 550px;
+    z-index: 3;
+}
+
+/* Bottom Logos Section */
+.whiskyLogos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background: linear-gradient(to right, black, #c99c41, black);
+    padding: 30px;
+}
+
+.whiskyLogos img {
+    height: 95px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.whiskyLogos>img:nth-child(1) {
+    height: 60px;
+}
+
+.active {
+    opacity: 1 !important;
+    transform: scale(1.1);
+}
+
+.whiskyContent>p {
+    font-size: 20px;
+}
+
+.navBtn {
+    transform: translateY(-20%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 4;
+}
+
+.navBtn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.leftBtn {
+    left: 30px;
+}
+
+.rightBtn {
+    right: 30px;
+}
+
+.navBtn:disabled {
+    background: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.4);
+    cursor: not-allowed;
+}
+
+.button_container {
+    display: flex;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.whiskyContent>h2 {
+    font-size: 37px;
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ✨ Fade & Slide Animations */
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBg {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* Apply Animations */
+.whiskyContent {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.whiskyBottle img {
+  animation: fadeInUp 1s ease forwards;
+  transition: transform 0.6s ease;
+}
+
+.whiskyBottle img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Background smooth fade */
+.whiskyHero {
+  animation: fadeInBg 0.8s ease;
+  transition: background-image 0.6s ease-in-out;
+}
+
+/* Logos Hover Animation */
+.whiskyLogos img {
+  transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.whiskyLogos img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #f5c95c);
+  opacity: 1;
+}
+
+/* Buttons Hover Animation */
+.navBtn {
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+
+@media (max-width:900px) {
+    .whiskyBottle img {
+        height: 400px;
+    }
+
+    .whiskyContent {
+        max-width: 67%;
+    }
+}
+
+@media (max-width:850px) {
+    .whiskyLogos {
+        gap: 50px;
+    }
+
+    .whiskyBottle img {
+        height: 300px;
+        right: 0;
+    }
+
+    .whiskyContent>p {
+        font-size: 18px;
+    }
+
+    .whiskyContent>h2 {
+        font-size: 33px;
+    }
+
+    .whiskyContent {
+        max-width: 80%;
+    }
+
+    .whiskyLogos>img:nth-child(1) {
+        height: 45px;
+    }
+
+    .whiskyLogos img {
+        height: 65px;
+    }
+
+    .whiskyWrapper {
+        margin-top: 105px;
+    }
+
+}
+
+@media (max-width:600px) {
+    .whiskyBottle img {
+        height: 240px;
+        bottom: -22px;
+    }
+
+    .whiskyHero {
+        padding: 32px;
+    }
+
+    .whiskyContent>h2 {
+        font-size: 30px;
+    }
+
+    .whiskyContent>p {
+        font-size: 16px;
+    }
+
+    .whiskyLogos {
+        gap: 20px;
+    }
+
+    .whiskyLogos img {
+        height: 50px;
+    }
+    .whiskyBottle img {
+        height: 178px;
+        bottom: -20px;
+    }
+}
+
+@media (max-width:420px) {
+    .navBtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .whiskyLogos>img:nth-child(1) {
+        height: 35px;
+    }
+
+    .whiskyContent>p {
+        font-size: 14px;
+    }
+
+    .whiskyLogos {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width:370px) {
+    .whiskyHero {
+        padding: 32px 15px;
+    }
+    .whiskyBottle img {
+        height: 178px;
+        bottom: -20px;
+    }
+     .whiskyLogos {
+        gap: 12px;
+    }
+    .whiskyLogos>img:nth-child(1) {
+        height: 30px;
+    }
+    .whiskyLogos img {
+        height: 40px;
+    }
+     .whiskyContent>h2 {
+        font-size: 25px;
+    }
+    .navBtn {
+        font-size: 20px;
+    }
+}
