@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link to="/about-us" className={styles.nav_link}>About</Link>
         {/* <Link to="/products" className={styles.nav_link}>Products</Link> */}
         <Link to="/contact-us" className={styles.nav_link}>Contact Us</Link>
-        <Link to="/appointment" className={styles.navCta}>Book a Consultation</Link>
+        <Link to="/appointment" className={styles.navCta}>Become a Partner</Link>
 
       </div>
 
@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link to="/about-us" className={styles.nav_link} onClick={() => setIsOpen(false)}>About</Link>
         {/* <Link to="/products" className={styles.nav_link} onClick={() => setIsOpen(false)}>Products</Link> */}
         <Link to="/contact-us" className={styles.nav_link} onClick={() => setIsOpen(false)}>Contact Us</Link>
-        <Link to="/appointment" className={styles.navCta} onClick={() => setIsOpen(false)}>Book a Consultation</Link>
+        <Link to="/appointment" className={styles.navCta} onClick={() => setIsOpen(false)}>Become a Partner</Link>
       </div>
     </nav>
   );

@@ -1,76 +1,98 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/AgeVerification.module.css";
-import BannerImage from "../assets/images/Thank-You.webp";
+import AlcoPopLogo from "../assets/images/Alcopop-logo.png";
+import { isAgeVerified, setAgeVerified } from "../utils/ageVerification";
 
 const AgeVerification = () => {
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
   const [isDenied, setIsDenied] = useState(false);
   const navigate = useNavigate();
 
-  // Check if user is verified & if 24 hours have passed
+  // Skip the gate if it was already cleared in the last 24 hours
   useEffect(() => {
-    const verificationTimestamp = localStorage.getItem("verificationTime");
-    if (verificationTimestamp) {
-      const currentTime = new Date().getTime();
-      const timeDifference = currentTime - parseInt(verificationTimestamp, 10);
-
-      // 24 hours = 24 * 60 * 60 * 1000 ms (1 Day)
-      if (timeDifference < 24 * 60 * 60 * 1000) {
-        navigate("/"); // Redirect if still within 24 hours
-      }
-    }
+    if (isAgeVerified()) navigate("/", { replace: true });
   }, [navigate]);
+
+  // Lock the page while the gate is up: nothing scrolls until "Yes"
+  useEffect(() => {
+    const body = document.body;
+    const previousOverflow = body.style.overflow;
+    body.style.overflow = "hidden";
+    return () => {
+      body.style.overflow = previousOverflow;
+    };
+  }, []);
 
   const handleVerification = (ageConfirmed) => {
     if (ageConfirmed) {
-      localStorage.setItem("isVerified", "true");
-      localStorage.setItem("verificationTime", new Date().getTime()); // Store current time
-      setIsPopupVisible(false);
-      navigate("/"); // Redirect to Home
+      setAgeVerified();
+      navigate("/", { replace: true });
     } else {
       setIsDenied(true);
     }
   };
 
   return (
-    <div className={styles.age_verification}>
-      {/* Background Image */}
-      <div className={styles.banner_container_age}>
-        <img src={BannerImage} alt="age-banner" />
+    <div className={styles.age_gate}>
+      <div
+        className={styles.gate_card}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="age_gate_title"
+      >
+        <img src={AlcoPopLogo} className={styles.gate_logo} alt="Alcopop Spirits" />
+
+        {isDenied ? (
+          <>
+            <h2 id="age_gate_title" className={styles.gate_title}>
+              Sorry, you can&rsquo;t enter
+            </h2>
+            <p className={styles.gate_copy}>
+              You must be of legal drinking age in your country or region to
+              view this website.
+            </p>
+            <button
+              type="button"
+              className={styles.back_btn}
+              onClick={() => setIsDenied(false)}
+            >
+              Go back
+            </button>
+          </>
+        ) : (
+          <>
+            <span className={styles.gate_eyebrow}>Age Verification</span>
+            <span className={styles.gate_divider} />
+            <h2 id="age_gate_title" className={styles.gate_title}>
+              Are you of legal drinking age?
+            </h2>
+            <p className={styles.gate_copy}>
+              The content on this website is not intended for anyone below the
+              legal drinking age in their country or region.
+            </p>
+            <div className={styles.button_container}>
+              <button
+                type="button"
+                onClick={() => handleVerification(true)}
+                className={styles.yes_btn}
+              >
+                Yes, I am
+              </button>
+              <button
+                type="button"
+                onClick={() => handleVerification(false)}
+                className={styles.no_btn}
+              >
+                No
+              </button>
+            </div>
+            <p className={styles.gate_note}>
+              By entering, you confirm you are of legal drinking age.
+              Please drink responsibly.
+            </p>
+          </>
+        )}
       </div>
-      {/* Age Verification Popup */}
-      {isPopupVisible && (
-        <div className={styles.popup_overlay}>
-          <div className={styles.popup}>
-            {isDenied ? (
-              <h3>You are not eligible to access this website.</h3>
-            ) : (
-              <>
-                <p>
-                  The content on our website is NOT for people below the legal
-                  drinking age in their country/region.
-                </p>
-                <h3>Are you of legal drinking age or above in your country?</h3>
-                <div className={styles.button_container}>
-                  <button
-                    onClick={() => handleVerification(true)}
-                    className={styles.yes_btn}
-                  >
-                    Yes
-                  </button>
-                  <button
-                    onClick={() => handleVerification(false)}
-                    className={styles.no_btn}
-                  >
-                    No
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   );
 };

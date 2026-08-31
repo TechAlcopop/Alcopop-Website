@@ -1,116 +1,238 @@
-.age_verification {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    height: fit-content;
-}
+/* ─── AGE GATE ───
+   Full-viewport, fixed: the page behind it cannot scroll and there is no way
+   past the card until "Yes" is chosen. Background is the home page hero image. */
 
-.banner_container_age {
-    position: relative;
-  width: 100%;
-  top: 60px;
+.age_gate {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
   overflow: hidden;
-  background-size: cover;
+  overscroll-behavior: none;
+  background:
+    radial-gradient(110% 80% at 50% 20%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.58) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.42) 100%),
+    url("../assets/img/header_background.jpg") #111111 50% / cover no-repeat;
 }
 
-.banner_container_age>img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
+.gate_card {
+  width: 100%;
+  max-width: 540px;
+  /* Stays inside the viewport on short screens instead of growing the page */
+  max-height: 100%;
+  overflow-y: auto;
+  padding: clamp(28px, 5vw, 48px) clamp(22px, 5vw, 44px);
+  text-align: center;
+  background: rgba(17, 17, 17, 0.72);
+  border: 1px solid rgba(176, 151, 109, 0.35);
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+  animation: gate_in 0.5s ease-out both;
+}
+
+@keyframes gate_in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gate_logo {
+  width: clamp(110px, 30vw, 150px);
+  height: auto;
+  margin: 0 auto;
   display: block;
 }
-.popup_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+
+.gate_eyebrow {
+  display: block;
+  margin-top: 26px;
+  color: #b0976d;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
-.popup {
-    background: rgba(0, 0, 0, 0.48);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    max-width: 400px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    color: white;
+.gate_divider {
+  display: block;
+  width: 44px;
+  height: 1px;
+  margin: 16px auto 0;
+  background: rgba(176, 151, 109, 0.6);
 }
 
-.popup h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: var(--Grey, #B9B9B9);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+.gate_title {
+  margin: 18px 0 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(22px, 4.4vw, 32px);
+  font-weight: 400;
+  line-height: 1.35;
 }
 
-.popup p {
-    color: var(--Grey, #B9B9B9);
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
+.gate_copy {
+  max-width: 42ch;
+  margin: 14px auto 0;
+  color: #b9b9b9;
+  font-size: clamp(13px, 2.6vw, 15px);
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 .button_container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.yes_btn,
+.no_btn {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 48px;
+  padding: 13px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .yes_btn {
-    display: flex;
-    width: 125px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #FFF;
-    cursor: pointer;
-    color: white;
-    background: rgba(0, 0, 0, 0.48);
-    transition: background 0.3s ease;
+  color: #111111;
+  background: #b0976d;
+  border: 1px solid #b0976d;
 }
 
 .yes_btn:hover {
-    background-color: rgb(59, 59, 223);
+  background: #c6ab7d;
+  border-color: #c6ab7d;
+  transform: translateY(-1px);
 }
 
 .no_btn {
-    display: flex;
-    width: 125px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #FFF;
-    cursor: pointer;
-    color: white;
-    background: rgba(0, 0, 0, 0.48);
-    transition: background 0.3s ease;
+  color: #e8e8e8;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 .no_btn:hover {
-    background-color: #c82333;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+  transform: translateY(-1px);
 }
 
-
-@media (min-width:1500px) {
-    .banner_container_age>img {
-        width: 100%;
-    }
+.yes_btn:focus-visible,
+.no_btn:focus-visible,
+.back_btn:focus-visible {
+  outline: 2px solid #b0976d;
+  outline-offset: 3px;
 }
 
-@media (max-width:700px) {
-    .banner_container_age{
-        overflow-x: hidden;
-    }   
+.gate_note {
+  margin: 26px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(185, 185, 185, 0.75);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.back_btn {
+  margin-top: 26px;
+  padding: 8px 4px;
+  color: #b0976d;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(176, 151, 109, 0.5);
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.back_btn:hover {
+  color: #d4b77f;
+  border-color: #d4b77f;
+}
+
+/* ─── Phones ─── */
+@media (max-width: 480px) {
+  .age_gate {
+    padding: 16px;
+  }
+
+  .gate_eyebrow {
+    margin-top: 20px;
+    letter-spacing: 0.18em;
+  }
+
+  /* Full-width stacked buttons are easier to hit with a thumb */
+  .button_container {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 26px;
+  }
+}
+
+/* ─── Landscape phones / very short viewports ─── */
+@media (max-height: 560px) {
+  .gate_logo {
+    width: 96px;
+  }
+
+  .gate_eyebrow {
+    margin-top: 16px;
+  }
+
+  .gate_divider {
+    margin-top: 12px;
+  }
+
+  .gate_title {
+    margin-top: 12px;
+    font-size: clamp(19px, 3.4vh, 26px);
+  }
+
+  .gate_copy {
+    margin-top: 10px;
+    line-height: 1.55;
+  }
+
+  .button_container {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  .gate_note {
+    margin-top: 18px;
+    padding-top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate_card {
+    animation: none;
+  }
+
+  .yes_btn:hover,
+  .no_btn:hover {
+    transform: none;
+  }
 }
