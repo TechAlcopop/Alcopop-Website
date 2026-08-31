@@ -4,8 +4,8 @@
   "description": "The Go-To-Market Platform for Alcohol Brands in India",
   "icons": [
     {
-      "src": "favicon/favicon.ico",
-      "sizes": "48x48 32x32 16x16",
+      "src": "favicon.ico",
+      "sizes": "96x96",
       "type": "image/x-icon"
     },
     {

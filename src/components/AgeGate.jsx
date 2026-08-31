@@ -1,32 +1,37 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "../styles/AgeVerification.module.css";
 import AlcoPopLogo from "../assets/images/Alcopop-logo.png";
 import { isAgeVerified, setAgeVerified } from "../utils/ageVerification";
 
-const AgeVerification = () => {
+/**
+ * Full-screen age gate rendered as an overlay on top of the site.
+ *
+ * It deliberately does NOT redirect to a separate route: a redirect meant the
+ * only content search engines could ever see was this question, so Google used
+ * it as the site's search snippet. As an overlay the real page stays in the DOM
+ * for crawlers while visitors still cannot read, scroll or click past it.
+ */
+const AgeGate = () => {
+  const [isOpen, setIsOpen] = useState(() => !isAgeVerified());
   const [isDenied, setIsDenied] = useState(false);
-  const navigate = useNavigate();
 
-  // Skip the gate if it was already cleared in the last 24 hours
+  // Lock scrolling while the gate is up
   useEffect(() => {
-    if (isAgeVerified()) navigate("/", { replace: true });
-  }, [navigate]);
-
-  // Lock the page while the gate is up: nothing scrolls until "Yes"
-  useEffect(() => {
+    if (!isOpen) return undefined;
     const body = document.body;
     const previousOverflow = body.style.overflow;
     body.style.overflow = "hidden";
     return () => {
       body.style.overflow = previousOverflow;
     };
-  }, []);
+  }, [isOpen]);
+
+  if (!isOpen) return null;
 
   const handleVerification = (ageConfirmed) => {
     if (ageConfirmed) {
       setAgeVerified();
-      navigate("/", { replace: true });
+      setIsOpen(false);
     } else {
       setIsDenied(true);
     }
@@ -97,4 +102,4 @@ const AgeVerification = () => {
   );
 };
 
-export default AgeVerification;
+export default AgeGate;

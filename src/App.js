@@ -1,46 +1,33 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import AgeVerification from "./pages/AgeVerification";
+import AgeGate from "./components/AgeGate";
 import Aboutus from "./pages/Aboutus";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollTop";
 import ContactUs from "./pages/ContactUs";
 import Compare from "./pages/Compare";
 import Appointment from "./pages/Appointment";
-import { isAgeVerified } from "./utils/ageVerification";
-
-function ProtectedRoute({ children }) {
-  return isAgeVerified() ? children : <Navigate to="/age-verification" replace />;
-}
 
 function AppShell() {
-  const { pathname } = useLocation();
-  // The age gate owns the whole screen: no navbar or footer to scroll or click past
-  const isAgeGate = pathname === "/age-verification";
-
   return (
     <div className="main_container_all">
       <ScrollToTop />
-      {!isAgeGate && <Navbar />}
+      <Navbar />
       <Routes>
-        <Route path="/age-verification" element={<AgeVerification />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/about-us" element={<ProtectedRoute><Aboutus /></ProtectedRoute>} />
-        <Route path="/compare" element={<ProtectedRoute><Compare /></ProtectedRoute>} />
-        <Route path="/appointment" element={<ProtectedRoute><Appointment /></ProtectedRoute>} />
-        <Route path="/contact-us" element={<ProtectedRoute><ContactUs /></ProtectedRoute>} />
-        <Route path="*" element={<Navigate to="/age-verification" replace />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<Aboutus />} />
+        <Route path="/compare" element={<Compare />} />
+        <Route path="/appointment" element={<Appointment />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        {/* Old gate URL kept so existing links and search results still land somewhere */}
+        <Route path="/age-verification" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      {!isAgeGate && <Footer />}
+      <Footer />
+      {/* Sits above everything until the visitor confirms their age */}
+      <AgeGate />
     </div>
   );
 }

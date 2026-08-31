@@ -1,0 +1,39 @@
+# Recommended .htaccess for alcopopspirits.com  (Apache / GoDaddy cPanel)
+#
+# IMPORTANT — REVIEW BEFORE UPLOADING.
+# Your web root almost certainly already has an .htaccess (something is
+# rewriting unknown paths to index.html today). Open that file first and MERGE
+# these rules into it. Do not blindly replace it, and keep a backup copy.
+#
+# What these rules fix:
+#   1. HTTPS is enforced.
+#   2. www.alcopopspirits.com 301-redirects to alcopopspirits.com, so Google
+#      indexes ONE hostname. Right now both hosts answer 200 independently and
+#      Google has indexed the www version with old cached content, while the
+#      page's <link rel="canonical"> points at the non-www version.
+#   3. Real files are served as-is. This is what makes /favicon.ico return the
+#      actual icon instead of the app's HTML page.
+#   4. Only genuine app routes fall back to index.html. Everything else returns
+#      a real 404, so retired URLs (/our-drinks, /news) drop out of Google's
+#      index instead of answering 200 with the app shell forever.
+
+RewriteEngine On
+
+# ─── 1. Force HTTPS ───
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ─── 2. www → non-www (canonical hostname) ───
+RewriteCond %{HTTP_HOST} ^www\.alcopopspirits\.com$ [NC]
+RewriteRule ^ https://alcopopspirits.com%{REQUEST_URI} [L,R=301]
+
+# ─── 3. Existing files and directories win (favicon.ico, /favicon/, /static/) ───
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ─── 4. React Router fallback, restricted to real routes ───
+# Add any new route here when you add one to App.js, or it will 404.
+RewriteRule ^(about-us|compare|appointment|contact-us|age-verification)/?$ /index.html [L]
+
+# Anything not matched above falls through to Apache's 404. That is intentional.
