@@ -7,7 +7,9 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer>
+    // data-nosnippet keeps footer text out of Google search snippets, so the
+    // page's meta description is used instead. Still visible to visitors.
+    <footer data-nosnippet="">
       <h3>ALCOPOP PROMISE</h3>
       <p>
         Driving growth in India’s thriving <br /> alcohol market

@@ -30,13 +30,15 @@
     />
 
     <!-- ─── FAVICONS / APP ICONS ─── -->
-    <!-- Rounded-corner SVG icon: modern browsers prefer this over the PNGs below -->
+    <!-- Rounded SVG icon: modern browsers prefer this over the PNGs below -->
     <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon/favicon.svg" />
+    <!-- Large square PNGs first: Google renders favicons at ~48px and needs a
+         square of at least 48x48, then masks it into a circle -->
+    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicon/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="%PUBLIC_URL%/favicon/favicon-48.png" />
+    <!-- Legacy fallback only (16x16) -->
     <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon/favicon-96x96.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/favicon/android-icon-192x192.png" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="%PUBLIC_URL%/favicon/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="%PUBLIC_URL%/favicon/apple-icon-60x60.png" />
