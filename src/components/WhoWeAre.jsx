@@ -27,6 +27,7 @@ const WhoWeAre = () => {
         <img
           src={WhoWeAreee}
           alt="who-we-are"
+          decoding="async"
           onLoad={() => setImgLoaded(true)}
           className={`${styles.img} ${imgLoaded ? styles.loaded : ""}`}
         />

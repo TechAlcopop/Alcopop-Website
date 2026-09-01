@@ -37,3 +37,50 @@ RewriteRule ^ - [L]
 RewriteRule ^(about-us|compare|appointment|contact-us|age-verification)/?$ /index.html [L]
 
 # Anything not matched above falls through to Apache's 404. That is intentional.
+
+
+# ─── 5. Compression ───
+# Text assets only. Images and video are already compressed formats; running
+# them through deflate wastes CPU for no size gain.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff2 font/woff font/ttf
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+
+# ─── 6. Caching ───
+# Everything under /static/ has a content hash in its filename (main.a1b2c3.js),
+# so a changed file is always a changed URL. Those can be cached forever, which
+# makes every repeat visit skip the JS, CSS and imagery entirely.
+#
+# index.html must NEVER be cached that way, or returning visitors keep loading
+# an old page that points at deleted hashed files.
+<IfModule mod_headers.c>
+  # Only /static/ is hash-named, so only /static/ gets the immutable treatment.
+  # Do NOT widen this to all images: files in /favicon/ keep their names
+  # forever, and an immutable year would make them impossible to update.
+  SetEnvIf Request_URI "^/static/" HASHED_ASSET
+  Header set Cache-Control "public, max-age=31536000, immutable" env=HASHED_ASSET
+
+  # The app shell must always be re-checked, or returning visitors keep an old
+  # index.html pointing at hashed files that no longer exist.
+  <FilesMatch "\.(html|json)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 week"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

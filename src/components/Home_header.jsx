@@ -7,6 +7,17 @@ const Home_header = () => {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
+  // Only one bottle is in the DOM at a time, so without this the second one
+  // would not start downloading until the rotation first reached it — leaving
+  // an empty slot mid-animation. Warm both up front; the browser serves the
+  // swap straight from cache.
+  useEffect(() => {
+    [zars, pipebottle].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);

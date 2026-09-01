@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="app-loading">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -68,10 +68,121 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <!-- ─── FONTS ───
+         Previously each CSS module started with its own @import of the same
+         Google Fonts sheet. An @import inside CSS can only start downloading
+         after the bundled stylesheet itself has arrived, which pushed the fonts
+         to the back of a request chain. Declaring them here (plus preconnect)
+         lets the browser start both the font CSS and the font files while the
+         HTML is still being parsed. Same families and weights as before. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    />
+
+    <!-- The "Why Alcopop" video streams from Cloudinary -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+
     <title>Alcopop Spirits</title>
+
+    <!-- ─── SPLASH LOADER ───
+         Inlined so it paints on the very first frame, long before the JS
+         bundle is downloaded and parsed. src/utils/pageReady.js fades it out
+         once React has mounted and the hero artwork, stylesheets and fonts
+         have all finished loading, so visitors never see a half-built page
+         with empty image slots. Deliberately uses system fonts only: the web
+         fonts may not be ready yet at the moment this is shown. -->
+    <style>
+      html.app-loading,
+      html.app-loading body {
+        overflow: hidden;
+      }
+
+      #app-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        background: #0d0d0d;
+        opacity: 1;
+        transition: opacity 0.45s ease;
+      }
+
+      #app-loader[data-hidden="true"] {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #app-loader .app-loader__mark {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.42em;
+        /* letter-spacing adds trailing space after the last letter; the
+           matching indent keeps the word optically centred */
+        text-indent: 0.42em;
+        color: #b0976d;
+      }
+
+      #app-loader .app-loader__track {
+        position: relative;
+        width: 170px;
+        height: 2px;
+        overflow: hidden;
+        border-radius: 2px;
+        background: rgba(176, 151, 109, 0.22);
+      }
+
+      #app-loader .app-loader__bar {
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: #b0976d;
+        animation: app-loader-slide 1.15s ease-in-out infinite;
+      }
+
+      @keyframes app-loader-slide {
+        from {
+          transform: translateX(-110%);
+        }
+        to {
+          transform: translateX(320%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #app-loader .app-loader__bar {
+          width: 100%;
+          animation: none;
+        }
+        #app-loader {
+          transition: none;
+        }
+      }
+    </style>
+    <noscript>
+      <style>
+        /* Without JS nothing can dismiss the loader, so never show it */
+        #app-loader { display: none; }
+        html.app-loading, html.app-loading body { overflow: auto; }
+      </style>
+    </noscript>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="app-loader" role="status" aria-live="polite" aria-label="Loading Alcopop Spirits">
+      <p class="app-loader__mark">Alcopop</p>
+      <span class="app-loader__track"><i class="app-loader__bar"></i></span>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.

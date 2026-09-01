@@ -14,10 +14,11 @@ const Zars = () => {
     { threshold: 0.3 }
   );
 
-  if (sectionRef.current) observer.observe(sectionRef.current);
+  const section = sectionRef.current;
+  if (section) observer.observe(section);
 
   return () => {
-    if (sectionRef.current) observer.unobserve(sectionRef.current);
+    if (section) observer.unobserve(section);
   };
 }, []);
 
@@ -47,7 +48,7 @@ const Zars = () => {
         </div>
       </div>
       <div>
-        <img src={Zarsreserve} alt="zars" />
+        <img src={Zarsreserve} alt="zars" loading="lazy" decoding="async" />
       </div>
     </div>
   );

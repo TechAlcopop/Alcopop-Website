@@ -1,0 +1,42 @@
+.route_fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    background: white;
+}
+
+.track {
+    position: relative;
+    display: block;
+    width: 170px;
+    height: 2px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: rgba(176, 151, 109, 0.22);
+}
+
+.bar {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: #B0976D;
+    animation: route_fallback_slide 1.15s ease-in-out infinite;
+}
+
+@keyframes route_fallback_slide {
+    from {
+        transform: translateX(-110%);
+    }
+
+    to {
+        transform: translateX(320%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bar {
+        width: 100%;
+        animation: none;
+    }
+}

@@ -15,10 +15,11 @@ const PipeMajor = () => {
       { threshold: 0.2 }
     );
   
-    if (ref.current) observer.observe(ref.current);
-  
+    const section = ref.current;
+    if (section) observer.observe(section);
+
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (section) observer.unobserve(section);
     };
   }, []);
   

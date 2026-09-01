@@ -23,9 +23,14 @@ const useCountUp = (end, duration = 2000, startCount = false) => {
   return count;
 };
 
+const VIDEO_SRC =
+  "https://res.cloudinary.com/dj0ysu3nb/video/upload/v1743144552/d3oqyeyfy5te7azknh81.mp4";
+
 const WhyAlco = () => {
   const sectionRef = useRef(null);
+  const videoRef = useRef(null);
   const [startCount, setStartCount] = useState(false);
+  const [loadVideo, setLoadVideo] = useState(false);
 
   const retailCount = useCountUp(500, 2000, startCount);
   const promotersCount = useCountUp(10, 2000, startCount);
@@ -41,12 +46,48 @@ const WhyAlco = () => {
       { threshold: 0.3 } // trigger when 30% of section is visible
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    const section = sectionRef.current;
+    if (section) observer.observe(section);
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (section) observer.unobserve(section);
     };
   }, []);
+
+  // This section is well below the fold, but the video used to start
+  // downloading the moment the page loaded, stealing bandwidth from the hero
+  // artwork. Hold it back until the visitor is nearly scrolled to it — the
+  // margin gives it a head start so it is still playing by the time it shows.
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px" }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  // <source> is rendered rather than assigned, so the element needs a nudge to
+  // pick it up and honour autoPlay.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!loadVideo || !video) return;
+
+    video.load();
+    const play = video.play();
+    // Autoplay can still be refused (battery saver, reduced data). Muted
+    // inline video is normally allowed, and a refusal is not worth surfacing.
+    if (play && typeof play.catch === "function") play.catch(() => {});
+  }, [loadVideo]);
 
   return (
     <div ref={sectionRef} className={styles.whyalco_container}>
@@ -74,16 +115,15 @@ const WhyAlco = () => {
 
         <div>
           <video
+            ref={videoRef}
             className={styles.foreground_video}
             autoPlay
             muted
             loop
             playsInline
+            preload="none"
           >
-            <source
-              src="https://res.cloudinary.com/dj0ysu3nb/video/upload/v1743144552/d3oqyeyfy5te7azknh81.mp4"
-              type="video/mp4"
-            />
+            {loadVideo && <source src={VIDEO_SRC} type="video/mp4" />}
           </video>
         </div>
       </div>
