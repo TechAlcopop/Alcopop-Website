@@ -106,47 +106,6 @@ const processSteps = [
   },
 ];
 
-const audience = [
-  {
-    icon: "🥂",
-    title: "International Distilleries",
-    text: "Scotch, bourbon, gin, rum, and vodka producers looking to establish a legal, scalable India presence without opening a local office. We become your India team.",
-  },
-  {
-    icon: "🌍",
-    title: "Import & Trading Companies",
-    text: "Foreign importers and trading houses seeking to expand their India beverage portfolio, access new distribution channels, or acquire state-level licences.",
-  },
-  {
-    icon: "💼",
-    title: "Private Equity & Investors",
-    text: "PE funds and strategic investors evaluating acquisitions, JVs, or greenfield investments in the Indian alcobev sector who need trusted on-ground diligence support.",
-  },
-  {
-    icon: "🍷",
-    title: "Wine & Craft Producers",
-    text: "Premium wine estates and craft distillers entering India for the first time who need end-to-end import structuring, compliance, and retail placement.",
-  },
-  {
-    icon: "🏨",
-    title: "Hospitality Groups",
-    text: "International hotel and restaurant groups expanding into India who need curated spirits procurement, import compliance, and beverage programme advisory.",
-  },
-  {
-    icon: "🚀",
-    title: "Start-ups & New Brands",
-    text: "Ambitious founders of emerging international spirits brands for whom India is a priority growth market from day one — we help you build it right from the start.",
-  },
-];
-
-const trustBadges = [
-  { strong: "Alcopopspirits.com", sub: "Active Spirits Portfolio" },
-  { strong: "Gurugram, India", sub: "On-Ground Operations" },
-  { strong: "28 States", sub: "Regulatory Coverage" },
-  { strong: "Multi-Category", sub: "Whisky · Gin · Wine · Vodka" },
-  { strong: "End-to-End", sub: "Strategy to Shelf" },
-];
-
 // ─── FADE-UP HOOK ────────────────────────────────────────────
 
 function useFadeUp() {
@@ -351,7 +310,6 @@ export default function Appointment() {
             { num: "$52B", label: "India Spirits Market 2024" },
             { num: "8.3%", label: "Projected Annual Growth" },
             { num: "28+", label: "State Regulatory Regimes" },
-            { num: "10yr", label: "On-Ground India Experience" },
           ].map((stat) => (
             <div className={styles.heroStat} key={stat.label}>
               <span className={styles.statNumber}>{stat.num}</span>
@@ -612,27 +570,6 @@ export default function Appointment() {
         </div>
       </section> */}
 
-      {/* ─── WHO WE SERVE ─── */}
-      <section className={styles.section} id="who">
-        <FadeUp>
-          <div className={styles.sectionLabel}>Our Clients</div>
-          <h2 className={styles.sectionTitle}>
-            Who We <em>Work With</em>
-          </h2>
-        </FadeUp>
-        <div className={styles.audienceGrid}>
-          {audience.map((a, i) => (
-            <FadeUp key={a.title} delay={(i % 3) * 0.1}>
-              <div className={styles.audienceCard}>
-                <span className={styles.audienceIcon}>{a.icon}</span>
-                <h4>{a.title}</h4>
-                <p>{a.text}</p>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </section>
-
       {/* ─── TRUST ─── */}
       <section className={styles.trustSection}>
         <div className={`${styles.sectionLabel} ${styles.sectionLabelCenter}`}>
@@ -647,18 +584,6 @@ export default function Appointment() {
           — Alcopop Spirits, Market Entry Philosophy
         </div>
 
-        <div className={styles.divider}>
-          <span className={styles.dividerGem}>◆</span>
-        </div>
-
-        <div className={styles.trustLogos}>
-          {trustBadges.map((b) => (
-            <div className={styles.trustBadge} key={b.strong}>
-              <strong>{b.strong}</strong>
-              {b.sub}
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ─── CTA ─── */}

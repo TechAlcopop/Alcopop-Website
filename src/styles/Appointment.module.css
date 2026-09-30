@@ -49,7 +49,7 @@
 
 .navLogo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
+  font-size: 1.46rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   color: var(--gold);
@@ -66,7 +66,7 @@
 }
 
 .navLinks a {
-  font-size: 0.75rem;
+  font-size: 0.84rem;
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 }
 
 .navCta {
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
 }
 
 .heroEyebrow {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 400;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -134,7 +134,7 @@
 
 .heroTitle {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-size: clamp(3.92rem, 5vw, 6.16rem);
   font-weight: 300;
   line-height: 1.05;
   color: var(--white);
@@ -147,7 +147,7 @@
 }
 
 .heroSubtitle {
-  font-size: 0.9rem;
+  font-size: 1.01rem;
   font-weight: 300;
   line-height: 1.8;
   color: var(--muted);
@@ -163,7 +163,7 @@
 }
 
 .btnPrimary {
-  font-size: 0.72rem;
+  font-size: 0.81rem;
   font-weight: 400;
   text-transform: uppercase;
   color: var(--black);
@@ -181,7 +181,7 @@
 }
 
 .btnGhost {
-  font-size: 0.72rem;
+  font-size: 0.81rem;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@
   right: 0;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--border);
   grid-column: 1 / -1;
   background-color: black;
@@ -275,7 +275,7 @@
 
 .statNumber {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.2rem;
+  font-size: 2.46rem;
   font-weight: 300;
   color: var(--gold);
   display: block;
@@ -284,7 +284,7 @@
 }
 
 .statLabel {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -308,7 +308,7 @@
 }
 
 .marqueeItem {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 300;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -321,7 +321,7 @@
 
 .marqueeItem span {
   color: var(--gold);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 @keyframes marquee {
@@ -339,7 +339,7 @@
 }
 
 .sectionLabel {
-  font-size: 0.62rem;
+  font-size: 0.69rem;
   font-weight: 400;
   letter-spacing: 0.4em;
   text-transform: uppercase;
@@ -363,7 +363,7 @@
 
 .sectionTitle {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-size: clamp(2.46rem, 3.5vw, 3.92rem);
   font-weight: 300;
   color: var(--white);
   line-height: 1.1;
@@ -384,7 +384,7 @@
 }
 
 .whyText p {
-  font-size: 0.92rem;
+  font-size: 1.03rem;
   font-weight: 300;
   line-height: 1.9;
   color: var(--muted);
@@ -414,7 +414,7 @@
 }
 
 .whyCardIcon {
-  font-size: 1.4rem;
+  font-size: 1.57rem;
   margin-bottom: 1rem;
   display: block;
   filter: sepia(1) saturate(2) hue-rotate(5deg);
@@ -422,14 +422,14 @@
 
 .whyCard h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
+  font-size: 1.34rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.5rem;
 }
 
 .whyCard p {
-  font-size: 0.78rem;
+  font-size: 0.87rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
@@ -444,7 +444,7 @@
 }
 
 .challengesIntro {
-  font-size: 0.88rem;
+  font-size: 0.99rem;
   font-weight: 300;
   color: var(--muted);
   max-width: 580px;
@@ -478,7 +478,7 @@
   top: -0.5rem;
   right: 1.5rem;
   font-family: "Cormorant Garamond", serif;
-  font-size: 5rem;
+  font-size: 5.6rem;
   font-weight: 300;
   color: rgba(201, 168, 76, 0.07);
   line-height: 1;
@@ -493,19 +493,19 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.23rem;
 }
 
 .challengeItem h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.8rem;
 }
 
 .challengeItem p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.75;
   color: var(--muted);
@@ -521,7 +521,7 @@
 }
 
 .servicesIntro p {
-  font-size: 0.88rem;
+  font-size: 0.99rem;
   font-weight: 300;
   line-height: 1.85;
   color: var(--muted);
@@ -574,7 +574,7 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -585,7 +585,7 @@
 
 .serviceNum {
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.9rem;
+  font-size: 1.01rem;
   color: var(--gold);
   font-weight: 400;
   margin-bottom: 1.5rem;
@@ -594,7 +594,7 @@
 
 .serviceCard h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
+  font-size: 1.79rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 1rem;
@@ -602,7 +602,7 @@
 }
 
 .serviceCard p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.8;
   color: var(--muted);
@@ -610,7 +610,7 @@
 }
 
 .serviceCardSubtitle {
-  font-size: 0.72rem;
+  font-size: 0.81rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -628,7 +628,7 @@
 }
 
 .serviceCardListItem {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   color: var(--muted);
   display: flex;
@@ -645,7 +645,7 @@
 .serviceCardListIconArrow {
   color: var(--gold);
   margin-top: 2px;
-  font-size: 1rem;
+  font-size: 1.12rem;
   flex-shrink: 0;
 }
 
@@ -662,7 +662,7 @@
 }
 
 .tag {
-  font-size: 0.62rem;
+  font-size: 0.69rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -717,7 +717,7 @@
   position: relative;
   z-index: 1;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 1.23rem;
   color: var(--gold);
   font-weight: 300;
   transition: all 0.3s;
@@ -731,14 +731,14 @@
 
 .processStep h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.1rem;
+  font-size: 1.23rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.6rem;
 }
 
 .processStep p {
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
@@ -765,21 +765,21 @@
 }
 
 .audienceIcon {
-  font-size: 2rem;
+  font-size: 2.24rem;
   margin-bottom: 1.5rem;
   display: block;
 }
 
 .audienceCard h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
+  font-size: 1.57rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.8rem;
 }
 
 .audienceCard p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.75;
   color: var(--muted);
@@ -794,7 +794,7 @@
 
 .trustQuote {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.79rem, 2.5vw, 2.8rem);
   font-weight: 300;
   font-style: italic;
   color: var(--white);
@@ -810,14 +810,14 @@
   position: absolute;
   left: -1rem;
   top: -1rem;
-  font-size: 6rem;
+  font-size: 6.72rem;
   color: rgba(201, 168, 76, 0.15);
   font-style: normal;
   line-height: 1;
 }
 
 .trustAuthor {
-  font-size: 0.75rem;
+  font-size: 0.84rem;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -835,7 +835,7 @@
 }
 
 .trustBadge {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 300;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -846,7 +846,7 @@
 .trustBadge strong {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
+  font-size: 1.57rem;
   font-weight: 300;
   color: var(--gold-light);
   font-style: italic;
@@ -872,7 +872,7 @@
 
 .dividerGem {
   color: var(--gold);
-  font-size: 0.6rem;
+  font-size: 0.67rem;
 }
 
 /* ─── CTA ─── */
@@ -887,7 +887,7 @@
 
 .ctaText h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.24rem, 3.5vw, 3.58rem);
   font-weight: 400;
   color: var(--black);
   line-height: 1.15;
@@ -895,7 +895,7 @@
 }
 
 .ctaText p {
-  font-size: 0.88rem;
+  font-size: 0.99rem;
   font-weight: 300;
   color: rgba(10, 10, 8, 0.65);
   max-width: 480px;
@@ -916,7 +916,7 @@
   color: var(--black);
   padding: 0.85rem 1rem;
   font-family: "Outfit", sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 300;
   outline: none;
   transition: border-color 0.3s;
@@ -933,7 +933,7 @@
 }
 
 .btnDark {
-  font-size: 0.72rem;
+  font-size: 0.81rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -967,7 +967,7 @@
 }
 
 .footerBrand p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
   line-height: 1.8;
   color: var(--muted);
@@ -976,7 +976,7 @@
 }
 
 .footerCol h5 {
-  font-size: 0.65rem;
+  font-size: 0.73rem;
   font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -992,7 +992,7 @@
 
 .footerCol li {
   margin-bottom: 0.6rem;
-  font-size: 0.78rem;
+  font-size: 0.87rem;
   font-weight: 300;
   color: var(--muted);
   cursor: default;
@@ -1009,7 +1009,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.72rem;
+  font-size: 0.81rem;
   font-weight: 300;
   color: var(--muted);
   letter-spacing: 0.1em;
@@ -1066,7 +1066,7 @@
   }
 
   .heroStatStrip {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     position: static;
     grid-column: auto;
   }
@@ -1150,7 +1150,16 @@
 
 @media (max-width: 480px) {
   .heroStatStrip {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .heroStat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .heroStat:last-child {
+    border-bottom: none;
   }
 
   .processSteps {
@@ -1166,10 +1175,10 @@
   }
   .btnPrimary{
         padding: 14px;
-        font-size: 10px;
+        font-size: 11px;
   }
   .btnGhost{
-    font-size: 10px;
+    font-size: 11px;
   }
   .heroActions{
     margin-bottom: 20px;
