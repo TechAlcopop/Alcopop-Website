@@ -51,7 +51,7 @@
 .who_we_content>h2 {
     color: #B0976D;
     font-family: Lato;
-    font-size: 25px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 900;
     line-height: 126.324%;
@@ -68,13 +68,12 @@
 }
 
 .who_we_content>p {
-    color: #050505;
-    font-family: Lato;
-    font-size: 19px;
-    font-style: normal;
+    font-family: var(--para-font);
     font-weight: 900;
-    line-height: 126.324%;
-    letter-spacing: 0.57px;
+    line-height: var(--para-line-height);
+    color: #050505;
+    font-size: 21px;
+    font-style: normal;
 }
 
 .who_we_grids {
@@ -84,17 +83,20 @@
 
 .who_we_grids>div>div {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
 }
-.who_we_grids>div>div:nth-child(3) {
-    display: flex;
-    gap: 17px;
+
+.who_we_grids>div>div>img {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
 }
 
 .who_we_grids>div>div>p {
     color: #050505;
     font-family: Lato;
-    font-size: 17px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 800;
     line-height: 150%;
@@ -110,7 +112,7 @@
 
 .our_impact_cont>h2 {
     color: #B0976D;
-    font-size: 37px;
+    font-size: 41px;
     font-style: normal;
     text-align: center;
     font-weight: 700;
@@ -159,7 +161,7 @@
 
 .our_impact_grid>div>h3 {
     color: #F1F1F1;
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: 126.324%;
@@ -170,7 +172,7 @@
 .our_impact_grid>div>p {
     color: #050505;
     font-family: Lato;
-    font-size: 15px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 126.324%;
@@ -202,13 +204,14 @@
 }
 
 .partner_cont>p {
+    font-family: var(--para-font);
+    font-weight: 400;
+    line-height: var(--para-line-height);
     width: 95%;
     color: #F1F1F1;
     text-align: center;
-    font-size: 27px;
+    font-size: 30px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
 }
 
 .connect_btn_cont {
@@ -245,7 +248,7 @@
 
 @media (max-width:1100px) {
     .who_we_content>h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .who_we_content>h1 {
@@ -253,11 +256,11 @@
     }
 
     .who_we_content>p {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     .our_impact_grid>div>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .our_impact_grid>div>h2 {
@@ -265,7 +268,7 @@
     }
 
     .our_impact_grid>div>h3 {
-        font-size: 17px;
+        font-size: 19px;
     }
 }
 
@@ -275,7 +278,7 @@
     }
 
     .who_we_content>h2 {
-        font-size: 19px;
+        font-size: 21px;
     }
 
     .who_we_content>h1 {
@@ -283,7 +286,7 @@
     }
 
     .who_we_content>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .who_we_grids {
@@ -291,7 +294,7 @@
     }
 
     .who_we_grids>div>div>p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .our_impact_grid {
@@ -303,7 +306,7 @@
     }
 
     .partner_cont>p {
-        font-size: 23px;
+        font-size: 25px;
     }
 
     .connect_btn_cont>a {
@@ -327,7 +330,7 @@
     }
 
     .who_we_content>h2 {
-        font-size: 25px;
+        font-size: 28px;
         text-align: center;
     }
 
@@ -337,7 +340,7 @@
     }
 
     .who_we_content>p {
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
     }
 
@@ -351,7 +354,7 @@
     }
 
     .our_impact_cont>h2 {
-        font-size: 27px;
+        font-size: 30px;
     }
 }
 
@@ -379,7 +382,7 @@
     }
 
     .who_we_content>p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .who_we_content>p:nth-child(3) {
@@ -393,7 +396,7 @@
 
     .partner_cont>p {
         text-align: start;
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .partner_cont {
@@ -420,7 +423,7 @@
     }
 
     .who_we_content>h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     .our_impact_cont>h1 {
@@ -443,21 +446,21 @@
     }
 
     .who_we_content>p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .who_we_grids>div>div>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .our_impact_cont>h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
     .partner_cont>h1 {
         font-size: 40px;
     }
     .partner_cont>p {
-        font-size: 18px;
+        font-size: 20px;
     }
     .connect_btn_cont>a {
         font-size: 15px;
@@ -485,7 +488,7 @@
 
 @media (max-width:475px) {
     .who_we_content>h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .who_we_content>h1 {
@@ -493,7 +496,7 @@
     }
 
     .who_we_content>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 }
 
@@ -509,7 +512,7 @@
         font-size: 35px;
     }
     .partner_cont>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
@@ -525,23 +528,23 @@
     }
 
     .who_we_content>h2 {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .who_we_content>p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .who_we_grids>div>div>p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .our_impact_grid>div>h3 {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .our_impact_grid>div>p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .our_impact_grid>div {
@@ -551,7 +554,7 @@
         font-size: 32px;
     }
     .partner_cont>p {
-        font-size: 14px;
+        font-size: 15px;
     }
     .connect_btn_cont>a {
         font-size: 12px;

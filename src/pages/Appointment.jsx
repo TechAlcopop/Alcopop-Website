@@ -16,63 +16,173 @@ const marqueeItems = [
   "JV Structuring",
 ];
 
+// Thin gold line icons for the "Why India Now" cards, drawn to match the
+// hero ornament's stroke style. They inherit colour from .whyCardIcon.
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.2,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  "aria-hidden": true,
+};
+
+// Premium spirits bottle with a star on the label
+const PremiumIcon = () => (
+  <svg {...iconProps}>
+    <path d="M10 2h4M10.5 2v4.2L8.6 9.1A2 2 0 0 0 8.3 10.2V21a1 1 0 0 0 1 1h5.4a1 1 0 0 0 1-1V10.2a2 2 0 0 0-.3-1.1l-1.9-2.9V2" />
+    <path d="M8.3 12.5h7.4M8.3 18.5h7.4" />
+    <path d="m12 13.8.55 1.1 1.2.18-.87.85.2 1.2L12 16.57l-1.08.56.2-1.2-.87-.85 1.2-.18z" />
+  </svg>
+);
+
+// Group of young consumers
+const DemographicsIcon = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="7.5" r="3" />
+    <path d="M6.5 20v-1.5a5.5 5.5 0 0 1 11 0V20" />
+    <circle cx="5" cy="9.5" r="2" />
+    <path d="M1.5 19v-1a3.5 3.5 0 0 1 4.4-3.4" />
+    <circle cx="19" cy="9.5" r="2" />
+    <path d="M22.5 19v-1a3.5 3.5 0 0 0-4.4-3.4" />
+  </svg>
+);
+
+// City skyline
+const MetroIcon = () => (
+  <svg {...iconProps}>
+    <path d="M2 21h20" />
+    <path d="M4 21V11h4v10M8 21V4h6v17M14 21V8h6v13" />
+    <path d="M10.5 7h1M10.5 10h1M10.5 13h1M10.5 16h1M16.5 11h1M16.5 14h1M16.5 17h1M5.5 14h1M5.5 17h1" />
+  </svg>
+);
+
+// Policy document with an approval tick
+const PolicyIcon = () => (
+  <svg {...iconProps}>
+    <path d="M14 2H6.5A1.5 1.5 0 0 0 5 3.5v17A1.5 1.5 0 0 0 6.5 22h11a1.5 1.5 0 0 0 1.5-1.5V7z" />
+    <path d="M14 2v5h5" />
+    <path d="M8.5 11h7M8.5 14h4" />
+    <path d="m9.5 18 1.6 1.5 3.4-3.5" />
+  </svg>
+);
+
 const whyCards = [
   {
-    icon: "🥃",
+    icon: <PremiumIcon />,
     title: "Premium Surge",
     text: "Premiumisation is outpacing overall market growth, with imported Scotch, craft gin, and premium vodka categories expanding fastest.",
   },
   {
-    icon: "📈",
+    icon: <DemographicsIcon />,
     title: "Young Demographics",
     text: "65% of India's population is under 35 — a rapidly expanding, aspirationally-driven consumer base discovering international brands.",
   },
   {
-    icon: "🏙️",
+    icon: <MetroIcon />,
     title: "Metro Boom",
     text: "Mumbai, Delhi, Bengaluru, Hyderabad and Pune are maturing into world-class on-trade markets with growing cocktail culture.",
   },
   {
-    icon: "🤝",
+    icon: <PolicyIcon />,
     title: "Policy Momentum",
     text: "Recent liberalisation in several key states and reforms to excise policy are creating the most open window in a decade.",
   },
 ];
 
+// Icons for the "What Makes India Complex" cards, same line style as above
+
+// Bottle label with an approval tick
+const LabelIcon = () => (
+  <svg {...iconProps}>
+    <path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z" />
+    <circle cx="7.5" cy="7.5" r="1.2" />
+    <path d="m9.5 13 2 2 4-4" />
+  </svg>
+);
+
+// State government building
+const ExciseIcon = () => (
+  <svg {...iconProps}>
+    <path d="M3 9.5 12 4l9 5.5H3z" />
+    <path d="M5 9.5V18M9.7 9.5V18M14.3 9.5V18M19 9.5V18" />
+    <path d="M3 18h18M2 21h20" />
+  </svg>
+);
+
+// Cargo ship carrying containers
+const CustomsIcon = () => (
+  <svg {...iconProps}>
+    <path d="M2.5 14h19l-2.2 5.2a1.5 1.5 0 0 1-1.4.8H6.1a1.5 1.5 0 0 1-1.4-.8z" />
+    <path d="M6 14V10h5v4M11 14V7h5v7M13.5 7v7M8.5 10v4" />
+    <path d="M16 14v-3h3v3" />
+  </svg>
+);
+
+// Delivery truck
+const DistributionIcon = () => (
+  <svg {...iconProps}>
+    <path d="M2 5.5h12v11H2z" />
+    <path d="M14 9h4l3.5 3.5v4H14" />
+    <circle cx="6" cy="18" r="1.8" />
+    <circle cx="17.5" cy="18" r="1.8" />
+  </svg>
+);
+
+// Price tag marked in rupees
+const PriceIcon = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="12" r="9.5" />
+    <path d="M8.5 7.5h7M8.5 10.5h7" />
+    <path d="M10 7.5a3 3 0 0 1 0 6H8.5l5 4.5" />
+  </svg>
+);
+
+// Megaphone struck through
+const AdvertisingIcon = () => (
+  <svg {...iconProps}>
+    <path d="M4 9.5v5h3l7 4.5v-14L7 9.5z" />
+    <path d="M7 14.5 8.3 20h2.2l-1-5" />
+    <path d="M17.5 9.5a3.5 3.5 0 0 1 0 5" />
+    <path d="M3 3l18 18" />
+  </svg>
+);
+
 const challenges = [
   {
     num: "01",
-    icon: "📋",
+    icon: <LabelIcon />,
     title: "Labelling & FSSAI",
     text: "Every SKU requires India-specific label registration with FSSAI and often additional state-level approvals before a single bottle can be sold. Non-compliance means seizure.",
   },
   {
     num: "02",
-    icon: "🏛️",
+    icon: <ExciseIcon />,
     title: "State Excise Laws",
     text: "Alcohol is a state subject under the Constitution. Each state sets its own licensing, pricing, and channel rules — what works in Goa will fail in Haryana.",
   },
   {
     num: "03",
-    icon: "📦",
+    icon: <CustomsIcon />,
     title: "Import & Customs",
     text: "India imposes tariffs of 150%+ on imported spirits. Structuring your entry — via wholly owned subsidiary, JV, or importer-on-record — has major cost implications.",
   },
   {
     num: "04",
-    icon: "🚚",
+    icon: <DistributionIcon />,
     title: "Distribution Access",
     text: "In most states, distribution runs through government-mandated channels or a small set of licensed distributors who hold enormous gatekeeping power.",
   },
   {
     num: "05",
-    icon: "💰",
+    icon: <PriceIcon />,
     title: "Price Point Navigation",
     text: "MRP and pricing bands are regulated state-by-state. A premium brand can be undercut by tax structures that commoditise it before reaching the consumer.",
   },
   {
     num: "06",
-    icon: "📢",
+    icon: <AdvertisingIcon />,
     title: "Advertising Restrictions",
     text: "Alcohol advertising is heavily restricted. A compliant, effective brand-building strategy in India requires creative navigating of surrogate marketing frameworks.",
   },

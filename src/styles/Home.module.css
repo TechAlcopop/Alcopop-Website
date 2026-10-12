@@ -9,7 +9,7 @@
 
 .header_container>div:nth-child(1)>p:nth-child(2) {
     color: #B0976D;
-    font-size: 25px;
+    font-size: 28px;
     font-family: Lato;
     font-style: normal;
     font-weight: 700;
@@ -19,7 +19,7 @@
 }
 .product_details>span{
    color: #1E1E1E;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -149,7 +149,7 @@
 .Who_details_cont>div>h3 {
     color: #B0976D;
     font-family: Lato;
-    font-size: 25px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 900;
     line-height: 126.324%;
@@ -187,13 +187,12 @@
 }
 
 .Who_details_cont>div>p {
-    color: #050505;
-    font-family: Lato;
-    font-size: 18px;
-    font-style: normal;
+    font-family: var(--para-font);
     font-weight: 900;
-    line-height: 126.324%;
-    letter-spacing: 0.57px;
+    line-height: var(--para-line-height);
+    color: #050505;
+    font-size: 20px;
+    font-style: normal;
 }
 
 .Who_details_cont>div>img {
@@ -276,7 +275,7 @@
 .product_details>p {
     color: var(--Primary-color, #B0976D);
     font-family: Lato;
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 900;
     line-height: 126.324%;
@@ -289,14 +288,12 @@
 }
 
 .product_details>div>p {
-    color: #050505;
-    font-family: Lato;
-    font-size: 19px;
-    font-style: normal;
+    font-family: var(--para-font);
     font-weight: 900;
-    line-height: 126.324%;
-    /* 24.001px */
-    letter-spacing: 0.57px;
+    line-height: var(--para-line-height);
+    color: #050505;
+    font-size: 21px;
+    font-style: normal;
     margin: 0;
 }
 
@@ -421,7 +418,7 @@
     }
 
     .product_details>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .product_details>h2:nth-child(3) {
@@ -429,7 +426,7 @@
     }
 
     .product_details>div>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .product_details {
@@ -445,7 +442,7 @@
 
 @media (max-width:1150px) {
     .Who_details_cont>div>h3 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .Who_details_cont>div>h1 {
@@ -453,7 +450,7 @@
     }
 
     .Who_details_cont>div>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .header_container {
@@ -485,7 +482,7 @@
     }
 
     .product_details>p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .product_details>h2:nth-child(3) {
@@ -494,7 +491,7 @@
     }
 
     .product_details>div>p {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     /* .header_container>div:nth-child(2)>img[alt="Zars Reserve"] {
@@ -509,7 +506,7 @@
     }
 
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .header_container>div:nth-child(1)>p:nth-child(1) {
@@ -525,7 +522,7 @@
     }
 
     .Who_details_cont>div>p {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 
@@ -535,7 +532,7 @@
     }
 
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .header_container>div:nth-child(1)>p:nth-child(1) {
@@ -549,7 +546,7 @@
     }
 
     .product_details>p {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .product_details>h2:nth-child(3) {
@@ -557,16 +554,16 @@
     }
 
     .product_details>div>p {
-        font-size: 11px;
+        font-size: 12px;
     }
     .product_details>span{
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
 @media (max-width:760px) {
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .header_container>div:nth-child(1)>p:nth-child(1) {
@@ -635,7 +632,7 @@
 
 @media (max-width:600px) {
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .header_container {
@@ -680,7 +677,7 @@
     }
 
     .product_details>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .product_details>h2:nth-child(3) {
@@ -688,7 +685,7 @@
     }
 
     .product_details>div>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .product_container>div:nth-child(1) {
@@ -720,7 +717,7 @@
     }
 
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .header_container>div:nth-child(1)>a {
@@ -739,11 +736,11 @@
         font-size: 30px;
     }
     .product_details>span{
-    font-size: 11px;
+    font-size: 12px;
   }
 
     .Who_details_cont>div>p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .who_main_cont>div {
@@ -774,7 +771,7 @@
 }
 @media (max-width:400px) {
     .header_container>div:nth-child(1)>p:nth-child(2) {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     .header_container>div:nth-child(1)>a {
@@ -796,11 +793,11 @@
     }
 
     .product_details>div>p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .product_details>p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .product_details>h2 {
@@ -824,6 +821,6 @@
         width: 170px;
     }
     .product_details>span{
-    font-size: 9px;
+    font-size: 10px;
   }
 }

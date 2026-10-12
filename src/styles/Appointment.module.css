@@ -114,7 +114,7 @@
 }
 
 .heroEyebrow {
-  font-size: 0.73rem;
+  font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -147,7 +147,7 @@
 }
 
 .heroSubtitle {
-  font-size: 1.01rem;
+  font-size: 1.11rem;
   font-weight: 300;
   line-height: 1.8;
   color: var(--muted);
@@ -284,7 +284,7 @@
 }
 
 .statLabel {
-  font-size: 0.73rem;
+  font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -339,7 +339,7 @@
 }
 
 .sectionLabel {
-  font-size: 0.69rem;
+  font-size: 0.76rem;
   font-weight: 400;
   letter-spacing: 0.4em;
   text-transform: uppercase;
@@ -384,7 +384,7 @@
 }
 
 .whyText p {
-  font-size: 1.03rem;
+  font-size: 1.13rem;
   font-weight: 300;
   line-height: 1.9;
   color: var(--muted);
@@ -414,22 +414,34 @@
 }
 
 .whyCardIcon {
-  font-size: 1.57rem;
-  margin-bottom: 1rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 1.1rem;
   display: block;
-  filter: sepia(1) saturate(2) hue-rotate(5deg);
+  color: var(--gold);
+  transition: color 0.3s;
+}
+
+.whyCardIcon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.whyCard:hover .whyCardIcon {
+  color: var(--gold-light);
 }
 
 .whyCard h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.34rem;
+  font-size: 1.47rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.5rem;
 }
 
 .whyCard p {
-  font-size: 0.87rem;
+  font-size: 0.96rem;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
@@ -444,7 +456,7 @@
 }
 
 .challengesIntro {
-  font-size: 0.99rem;
+  font-size: 1.09rem;
   font-weight: 300;
   color: var(--muted);
   max-width: 580px;
@@ -486,26 +498,38 @@
 }
 
 .challengeIcon {
-  width: 42px;
-  height: 42px;
+  width: 55px;
+  height: 55px;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
-  font-size: 1.23rem;
+  color: var(--gold);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.challengeIcon svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.challengeItem:hover .challengeIcon {
+  color: var(--gold-light);
+  border-color: var(--gold);
 }
 
 .challengeItem h4 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
+  font-size: 1.54rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 0.8rem;
 }
 
 .challengeItem p {
-  font-size: 0.9rem;
+  font-size: 0.99rem;
   font-weight: 300;
   line-height: 1.75;
   color: var(--muted);
@@ -521,7 +545,7 @@
 }
 
 .servicesIntro p {
-  font-size: 0.99rem;
+  font-size: 1.09rem;
   font-weight: 300;
   line-height: 1.85;
   color: var(--muted);
@@ -594,7 +618,7 @@
 
 .serviceCard h3 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.79rem;
+  font-size: 1.97rem;
   font-weight: 400;
   color: var(--white);
   margin-bottom: 1rem;
@@ -602,7 +626,7 @@
 }
 
 .serviceCard p {
-  font-size: 0.9rem;
+  font-size: 0.99rem;
   font-weight: 300;
   line-height: 1.8;
   color: var(--muted);
@@ -610,7 +634,7 @@
 }
 
 .serviceCardSubtitle {
-  font-size: 0.81rem;
+  font-size: 0.89rem;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -628,7 +652,7 @@
 }
 
 .serviceCardListItem {
-  font-size: 0.9rem;
+  font-size: 0.99rem;
   font-weight: 300;
   color: var(--muted);
   display: flex;
@@ -645,7 +669,7 @@
 .serviceCardListIconArrow {
   color: var(--gold);
   margin-top: 2px;
-  font-size: 1.12rem;
+  font-size: 1.46rem;
   flex-shrink: 0;
 }
 
@@ -817,7 +841,7 @@
 }
 
 .trustAuthor {
-  font-size: 0.84rem;
+  font-size: 0.92rem;
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -895,7 +919,7 @@
 }
 
 .ctaText p {
-  font-size: 0.99rem;
+  font-size: 1.09rem;
   font-weight: 300;
   color: rgba(10, 10, 8, 0.65);
   max-width: 480px;

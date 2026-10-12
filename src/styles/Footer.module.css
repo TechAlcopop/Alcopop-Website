@@ -7,7 +7,7 @@ footer {
 footer>h3 {
     color: var(--Primary-color, #B0976D);
     font-family: Lato;
-    font-size: 25px;
+    font-size: 28px;
     font-style: normal;
     font-weight: 900;
     line-height: 126.324%;
@@ -80,7 +80,7 @@ footer>p {
 }
 
 .footer_end>div:nth-child(2)>a>img{
-    width: 30px;
+    width: 36px;
     cursor: pointer;
 }
 
@@ -93,7 +93,7 @@ footer>p {
         font-size: 50px;
     }
     footer>h3{
-        font-size: 20px;
+        font-size: 22px;
     }
     .footer_end>div:nth-child(3){
         font-size: 16px;
@@ -111,7 +111,7 @@ footer>p {
 
 @media (max-width:600px) {
      footer>h3{
-        font-size: 16px;
+        font-size: 18px;
     }
     .footer_end>div:nth-child(3){
         font-size: 13px;
@@ -126,7 +126,7 @@ footer>p {
 
 @media (max-width:500px) {
 footer>h3{
-        font-size: 13px;
+        font-size: 14px;
     }
     .footer_end>div:nth-child(3){
         font-size: 10px;
@@ -138,13 +138,13 @@ footer>h3{
         font-size: 25px;
     }
     .footer_end>div:nth-child(2)>a>img{
-    width: 23px;
+    width: 28px;
     }
 }
 
 @media (max-width:400px) {
 footer>h3{
-        font-size: 10px;
+        font-size: 11px;
     }
     .footer_end>div:nth-child(3){
         font-size: 7px;
@@ -156,6 +156,6 @@ footer>h3{
         font-size: 18px;
     }
     .footer_end>div:nth-child(2)>a>img{
-    width: 18px;
+    width: 22px;
     }
 }

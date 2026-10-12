@@ -22,7 +22,7 @@
 .whyalco_content>p:nth-child(1) {
     color: #F1F1F1;
     font-family: Lato;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 126.324%;
@@ -41,7 +41,7 @@
 .whyalco_content>p:nth-child(2) {
     color: #F1F1F1;
     font-family: "Playfair Display";
-    font-size: 30px;
+    font-size: 33px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -61,7 +61,7 @@
 .whyalco_content>div>p:nth-child(2) {
     color: #FFF;
     font-family: Lato;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 900;
     line-height: 126.324%;
@@ -77,7 +77,7 @@
 
 @media (max-width:900px) {
     .whyalco_content>p:nth-child(2) {
-        font-size: 25px;
+        font-size: 28px;
     }
 
     .whyalco_content>div>p:nth-child(1) {
@@ -85,7 +85,7 @@
     }
 
     .whyalco_content>div>p:nth-child(2) {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
@@ -95,7 +95,7 @@
     }
 
     .whyalco_content>p:nth-child(2) {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .whyalco_content>div>p:nth-child(1) {
@@ -113,7 +113,7 @@
 
 @media (max-width:600px) {
     .whyalco_content>p:nth-child(2) {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .whyalco_content>div>p:nth-child(1) {
@@ -121,7 +121,7 @@
     }
 
     .whyalco_content>div>p:nth-child(2) {
-        font-size: 13px;
+        font-size: 14px;
     }
     .whyalco_container {
         margin: 10px 0px;
@@ -131,18 +131,18 @@
 @media (max-width:450px) {
     .whyalco_content>p:nth-child(1) {
         margin-bottom: 0;
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .whyalco_content>p:nth-child(2) {
-        font-size: 13px;
+        font-size: 14px;
     }
     .whyalco_content>div>p:nth-child(1) {
         font-size: 17px;
     }
 
     .whyalco_content>div>p:nth-child(2) {
-        font-size: 11px;
+        font-size: 12px;
     }
     .whyalco_content {
         padding: 0px 10px;
@@ -151,15 +151,15 @@
 
 @media (max-width:350px) {
     .whyalco_content>p:nth-child(1) {
-        font-size: 12px;
+        font-size: 13px;
     }
     .whyalco_content>p:nth-child(2) {
-        font-size: 10px;
+        font-size: 11px;
     }
     .whyalco_content>div>p:nth-child(1) {
         font-size: 13px;
     }
      .whyalco_content>div>p:nth-child(2) {
-        font-size: 10px;
+        font-size: 11px;
     }
 }
