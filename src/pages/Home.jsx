@@ -4,6 +4,7 @@ import WhyAlco from "../components/WhyAlco";
 import Beat from "../components/Beat";
 import Zars from "../components/Zars";
 import PipeMajor from "../components/PipeMajor";
+import ZarsStory from "../components/ZarsStory";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <WhoWeAre />
       <PipeMajor />
        <Zars />
+      <ZarsStory />
       <Beat />
       <WhyAlco />
     </>
